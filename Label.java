@@ -8,7 +8,7 @@ public class Label extends Actor {
     }
 
     public void setText(String text) {
-        image = new GreenfootImage(text, 24, Color.WHITE, Color.BLACK);
+        image = new GreenfootImage(text, 18, Color.BLACK, Color.WHITE);
         setImage(image);
     }
 }

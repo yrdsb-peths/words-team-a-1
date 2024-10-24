@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class InstructionScreen extends World {
     private String[] instructions = {
-        "Instruction 1: How to play the game.",
+        "In order to defeat the enemy, you must quickly type words that appear on a screen.",
         "Instruction 2: Use arrow keys to move.",
         "Instruction 3: Collect items to score."
     };
