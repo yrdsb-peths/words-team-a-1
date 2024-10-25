@@ -3,37 +3,39 @@ import java.util.*;
 
 public class Letters extends Actor
 {
-    public Map<String,String> redLetters = new HashMap<>();
+    public static Map<String,String> letter;
     
     public Letters()
     {
+        letter= new HashMap<>();
+
         //put all letters into hashmap
-        redLetters.put("a", "red a.png");
-        redLetters.put("b", "red b.png");
-        redLetters.put("c", "red c.png");
-        redLetters.put("d", "red d.png");
-        redLetters.put("e", "red e.png");
-        redLetters.put("f", "red f.png");
-        redLetters.put("g", "red g.png");
-        redLetters.put("h", "red h.png");
-        redLetters.put("i", "red i.png");
-        redLetters.put("j", "red j.png");
-        redLetters.put("k", "red k.png");
-        redLetters.put("l", "red l.png");
-        redLetters.put("m", "red m.png");
-        redLetters.put("n", "red n.png");
-        redLetters.put("o", "red o.png");
-        redLetters.put("p", "red p.png");
-        redLetters.put("q", "red q.png");
-        redLetters.put("r", "red r.png");
-        redLetters.put("s", "red s.png");
-        redLetters.put("t", "red t.png");
-        redLetters.put("u", "red u.png");
-        redLetters.put("v", "red v.png");
-        redLetters.put("w", "red w.png");
-        redLetters.put("x", "red x.png");
-        redLetters.put("y", "red y.png");
-        redLetters.put("z", "red z.png");
+        letter.put("a", "00_grey letters.png ");
+        letter.put("b", "01_grey letters.png ");
+        letter.put("c", "02_grey letters.png ");
+        letter.put("d", "03_grey letters.png ");
+        letter.put("e", "04_grey letters.png ");
+        letter.put("f", "05_grey letters.png ");
+        letter.put("g", "06_grey letters.png ");
+        letter.put("h", "07_grey letters.png ");
+        letter.put("i", "08_grey letters.png ");
+        letter.put("j", "09_grey letters.png ");
+        letter.put("k", "10_grey letters.png ");
+        letter.put("l", "11_grey letters.png ");
+        letter.put("m", "12_grey letters.png ");
+        letter.put("n", "13_grey letters.png ");
+        letter.put("o", "14_grey letters.png ");
+        letter.put("p", "15_grey letters.png ");
+        letter.put("q", "16_grey letters.png ");
+        letter.put("r", "17_grey letters.png ");
+        letter.put("s", "18_grey letters.png ");
+        letter.put("t", "19_grey letters.png ");
+        letter.put("u", "20_grey letters.png ");
+        letter.put("v", "21_grey letters.png ");
+        letter.put("w", "22_grey letters.png ");
+        letter.put("x", "23_grey letters.png ");
+        letter.put("y", "24_grey letters.png ");
+        letter.put("z", "25_grey letters.png ");
     }
 
     public void act()

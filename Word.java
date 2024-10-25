@@ -28,7 +28,8 @@ public class Word extends Actor
         for(int i = 0; i < chosenWord.length();i++)
         {
             word[i][0] = chosenWord.substring(i,i+1);
-            Map<String,String> testing = Letters.redLetters;
+            word[i][1] = Letters.letter.get(chosenWord.substring(i,i+1));
+            System.out.println(word[i][1]);
         }
     }
 
