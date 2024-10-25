@@ -4,14 +4,14 @@ public class Enemy extends Actor
 {
     SimpleTimer animationTimer = new SimpleTimer();
     int imageIndex = 0;
-    GreenfootImage[] idleWalk = new GreenfootImage[7];
+    GreenfootImage[] idleWalk = new GreenfootImage[6];
     
     public Enemy()
     {
         for(int i = 0; i < idleWalk.length; i++)
         {
             idleWalk[i] = new GreenfootImage("images/enemies/1/walk" + i + ".png");
-            idleWalk[i].scale(125,125); 
+            idleWalk[i].scale(100,100); 
         }
         
         animationTimer.mark();
