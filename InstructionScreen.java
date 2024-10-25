@@ -3,8 +3,8 @@ import greenfoot.*;
 public class InstructionScreen extends World {
     private String[] instructions = {
         "In order to defeat the enemy, you must quickly type words that appear on a screen.",
-        "Instruction 2: Use arrow keys to move.",
-        "Instruction 3: Collect items to score."
+        "The enemy will slowly move towards you and if the enemy touches you, you lose.",
+        "Otherwise you win and the score you get depends on the word you type. "
     };
     private int currentIndex = 0;
     private Label instructionLabel;
