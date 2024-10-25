@@ -1,7 +1,6 @@
 import greenfoot.*;
 import java.util.*;
 import java.io.*;
-import java.io.FileNotFoundException;
 
 public class Word extends Actor
 {
@@ -23,12 +22,14 @@ public class Word extends Actor
         {
             br.readLine();
         }
-        System.out.println(br.readLine());
+        String chosenWord = br.readLine();
 
         //turn word selected into array
-
-        //add images into array based on letter 
-        
+        for(int i = 0; i < chosenWord.length();i++)
+        {
+            word[i][0] = chosenWord.substring(i,i+1);
+            Map<String,String> testing = Letters.redLetters;
+        }
     }
 
     public void act()
