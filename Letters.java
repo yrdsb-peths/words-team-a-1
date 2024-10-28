@@ -7,8 +7,17 @@ public class Letters extends Actor
     
     public Letters()
     {
-        letter= new HashMap<>();
+        letter= new HashMap<String, String>();
+        fillMap();
+    }
 
+    public void act()
+    {
+        //switch colours depending on keys typed (access word 2D array and switch image)
+    }
+    
+    public void fillMap()
+    {
         //put all letters into hashmap
         letter.put("a", "00_grey letters.png ");
         letter.put("b", "01_grey letters.png ");
@@ -37,12 +46,6 @@ public class Letters extends Actor
         letter.put("y", "24_grey letters.png ");
         letter.put("z", "25_grey letters.png ");
     }
-
-    public void act()
-    {
-        //switch colours depending on keys typed (access word 2D array and switch image)
-    }
-
 }
 
 

@@ -5,12 +5,10 @@ import java.io.*;
 public class Word extends Actor
 {
     //[char][associated image]
-    public String[][] word;
-
-    //line range = 1 - 4282
-   // File file = new File("wordList.txt");
-    Scanner sc;
-
+    public String[][] word;    
+    Letters letter = new Letters();
+    int length;
+    
     public Word() throws IOException
     {
         //pick word player has to type
@@ -22,14 +20,20 @@ public class Word extends Actor
         {
             br.readLine();
         }
+        
         String chosenWord = br.readLine();
-
+        
+        length = chosenWord.length();
+        word = new String[length][2];
+        
         //turn word selected into array
-        for(int i = 0; i < chosenWord.length();i++)
+        for(int i = 0; i < length;i++)
         {
-            word[i][0] = chosenWord.substring(i,i+1);
-            word[i][1] = Letters.letter.get(chosenWord.substring(i,i+1));
-            System.out.println(word[i][1]);
+            String currentLetter = chosenWord.substring(i,i+1);
+            word[i][0] = currentLetter;
+            word[i][1] = Letters.letter.get(currentLetter);
+            
+            System.out.println(word[i][0] + ": " + word[i][1]);
         }
     }
 
@@ -47,6 +51,10 @@ public class Word extends Actor
      */
     private void displayWord()
     {
+        for(int i = 0; i < length; i++)
+        {
+            
+        }
     }
 
     /**
