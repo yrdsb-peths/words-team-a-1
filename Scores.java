@@ -9,8 +9,7 @@ public class Scores{
         attemptNumber++;
     }
 
-    public HashMap<Integer, Integer> returnScores(){
-        return scores;
-    }
-
+    public Integer returnScoreValue(int attempt){
+        return scores.get(attempt);
+    } 
 }
