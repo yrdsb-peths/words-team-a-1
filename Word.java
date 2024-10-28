@@ -32,6 +32,11 @@ public class Word extends Actor
         displayWord();
 
         //check for keystrokes, update word array's image value
+        String keyPressed = Greenfoot.getKey();
+        if(keyPressed != null)
+        {
+            System.out.println(keyPressed);
+        }
 
         //update images
     }
@@ -41,11 +46,10 @@ public class Word extends Actor
      */
     private void displayWord()
     {
-        //add letters to world 
+        //add letters to array word, add letters to world
         for(int i = 0; i < length; i++)
         {
             word[i] = new Letters(chosenWord.substring(i,i+1));
-            System.out.println(word[i]);
             getWorld().addObject(word[i], i*30 + 100, 100);
         }
     }
