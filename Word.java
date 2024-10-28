@@ -5,14 +5,14 @@ import java.io.*;
 public class Word extends Actor
 {
     //[char][associated image]
-    public String[][] word;    
-    Letters letter = new Letters();
+    public Letters[] word;    
     int length;
+    String chosenWord;
     
     public Word() throws IOException
     {
         //pick word player has to type
-        int line = new Random().nextInt(4283);
+        int line = new Random().nextInt(4279);
 
         FileInputStream file = new FileInputStream("wordList.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(file));
@@ -21,20 +21,10 @@ public class Word extends Actor
             br.readLine();
         }
         
-        String chosenWord = br.readLine();
+        chosenWord = br.readLine();
         
         length = chosenWord.length();
-        word = new String[length][2];
-        
-        //turn word selected into array
-        for(int i = 0; i < length;i++)
-        {
-            String currentLetter = chosenWord.substring(i,i+1);
-            word[i][0] = currentLetter;
-            word[i][1] = Letters.letter.get(currentLetter);
-            
-            System.out.println(word[i][0] + ": " + word[i][1]);
-        }
+        word = new Letters[length];
     }
 
     public void act()
@@ -51,9 +41,12 @@ public class Word extends Actor
      */
     private void displayWord()
     {
+        //add letters to world 
         for(int i = 0; i < length; i++)
         {
-            
+            word[i] = new Letters(chosenWord.substring(i,i+1));
+            System.out.println(word[i]);
+            getWorld().addObject(word[i], i*30 + 100, 100);
         }
     }
 
