@@ -1,3 +1,4 @@
+import greenfoot.*;
 import java.util.HashMap;
 
 public class Scores{
