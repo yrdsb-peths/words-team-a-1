@@ -1,16 +1,15 @@
-import greenfoot.*;
 import java.util.HashMap;
 
 public class Scores{
-    public HashMap<Integer, Integer> scores = new HashMap<>();
-    private int attemptNumber = 1;
+    public static HashMap<Integer, Integer> scores = new HashMap<>();
+    public static int attemptNumber = 1;
 
-    public void addScore(int score){
+    public static void addScore(int score){
         scores.put(attemptNumber, score);
         attemptNumber++;
     }
 
-    public Integer returnScoreValue(int attempt){
+    public static Integer returnScoreValue(int attempt){
         return scores.get(attempt);
     } 
 }
