@@ -3,32 +3,86 @@ import java.util.*;
 
 public class Letters extends Actor
 {
-    public static Map<String,String> letter;
-    String lett, image;
+    public Map<String,String> letter;
+    public String lett;
+    public GreenfootImage image;
 
     public Letters(String lett)
     {
+        //set up map
         letter= new HashMap<String, String>();
         fillMap();
 
         this.lett = lett;
-       // image = letter.get(lett);
-        GreenfootImage image = new GreenfootImage(letter.get(lett));
-        image.scale(30,30);
-        setImage(image);
+
+        //set up image for letter
+        changeImage();
 
     }
 
-    public void act()
+    public void act(){}
+    
+    /**
+     * 
+     * @param key
+     */
+    public void removeImage(String key)
     {
-        //switch colours depending on keys typed (access word 2D array and switch image)
+
     }
 
-    public String toString()
+    /**
+     * This method changes the value of the letter hashmap to the red version of the letters
+     * @param key
+     */
+    public void toRed(String key)
     {
-        return lett + ": " + image;
+        if(letter.get(key).contains("grey"))
+        {
+            //create string containing address of red version of letter
+            String newImage = "images/red letters/";
+            newImage = newImage.concat(letter.get(key).substring(20,23) + "red letters.png");
+
+            //replace value at key with new red version of letter
+            letter.replace(key, newImage);
+
+            //set up image for letter
+            changeImage();
+
+        }
+    }
+
+    /**
+     * This method changes the value of the letter hashmap to the grey version of the letters
+     * @param key
+     */
+    public void toGrey(String key)
+    {
+        //only changes colour if value is already red
+        if(letter.get(key).contains("red"))
+        {
+            String newImage = "images/grey letters/";
+            newImage = newImage.concat(letter.get(key).substring(19,22) + "grey letters.png");
+
+            letter.replace(key,newImage);
+            changeImage();
+        }
+
     }
     
+    /**
+     * This method creates a new greenfoot image and sets it to the image of class
+     */
+    private void changeImage()
+    {
+        image = new GreenfootImage(letter.get(lett));
+        image.scale(30,30);
+        setImage(image);
+    }
+
+    /**
+     * This method fills the hashmap with all the letters
+     */
     public void fillMap()
     {
         //put all letters into hashmap
