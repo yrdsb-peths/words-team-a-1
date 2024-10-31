@@ -1,32 +1,28 @@
 import greenfoot.*;
+import java.util.HashMap;
 
 public class GameOverScreen extends World {
-    Label gameOverLabel = new Label("Game Over", 60);
-    Label highscoresLabel = new Label("High Scores", 40);
-    Label scoreLabel1 = new Label(Scores.returnScoreValue(1), 30);
-    // Label scoreLabel2 = new Label("Game Over", 30);
-    // Label scoreLabel3 = new Label("Game Over", 30);
+    Label gameOverLabel = new Label("Game Over", 70);
+    Label highscoresLabel = new Label("Recent Scores:", 40);
+    Label scoreLabel1;
+    Label scoreLabel2;
 
-
-    // Labek score
- 
     public GameOverScreen() {
-        super(600, 400, 1); 
-        addObject(gameOverLabel, 250, 100);
-        addObject(highscoresLabel, 250, 150);
-        System.out.println(Scores.returnScoreValue(1));
-        // addObject(titleLabel, 250, 100);
-        // addObject(titleLabel, 250, 100);
-        // addObject(titleLabel, 250, 100);
-        // addObject(titleLabel, 250, 100);
-        // addObject(titleLabel, 250, 100);
-        // addObject(titleLabel, 250, 100);
-    }
+        super(600, 400, 1);
+        
+        addObject(gameOverLabel, 295, 75);
+        addObject(highscoresLabel, 295, 150);
 
-    // Add the game screen when done
-    // public void act() {
-    //     if(Greenfoot.isKeyDown("space")) {
-    //         Greenfoot.setWorld(menuScreen);
-    //     }
-    // }
+        Scores.addScore(1400);
+        Scores.addScore(1500);
+
+        Integer score1 = Scores.returnScoreValue(1);
+        Integer score2 = Scores.returnScoreValue(2);
+        if (score1 != null) {
+            scoreLabel1 = new Label(score1.toString(), 30);
+            scoreLabel2= new Label (score2.toString(), 30);
+            addObject(scoreLabel1, 295, 175);
+            addObject(scoreLabel2, 295, 200);
+        }
+    }
 }
