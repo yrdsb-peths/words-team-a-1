@@ -8,7 +8,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         
         Word word = new Word(this);
-        addObject(word,-100,-100);
+        addObject(word,0,0);
         
         Avatar hero = new Avatar(); 
         addObject(hero, 300, 200);
