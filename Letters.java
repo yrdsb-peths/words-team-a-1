@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Letters extends Actor
 {
+    public World world;
     public Map<String,String> letter;
     public String lett;
     public GreenfootImage image;
-    public World world;
 
     public Letters(String lett, World world)
     {
@@ -16,14 +16,13 @@ public class Letters extends Actor
 
         this.lett = lett;
         this.world = world;
+
         //set up image for letter
         changeImage();
     }
-
-    public void act(){}
     
     /**
-     * 
+     * This method changes the image to null
      * @param key
      */
     public void removeImage(String key)
@@ -61,9 +60,11 @@ public class Letters extends Actor
         //only changes colour if value is already red
         if(letter.get(key).contains("red"))
         {
+            //create string with address of grey versiou of letter
             String newImage = "images/grey letters/";
             newImage = newImage.concat(letter.get(key).substring(19,22) + "grey letters.png");
 
+            //replace value in hashmap and update
             letter.replace(key,newImage);
             changeImage();
         }
@@ -74,7 +75,6 @@ public class Letters extends Actor
      */
     private void changeImage()
     {
-        //world.removeObject(this);
         if(letter.get(lett).equals("null"))
         {
             setImage((GreenfootImage)null);
@@ -82,7 +82,7 @@ public class Letters extends Actor
         else
         {
             image = new GreenfootImage(letter.get(lett));
-            image.scale(30,30);
+            image.scale(50,50);
             setImage(image);
         }
     }
