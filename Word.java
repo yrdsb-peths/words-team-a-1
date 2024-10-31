@@ -2,18 +2,20 @@ import greenfoot.*;
 import java.util.*;
 import java.io.*;
 
-public class Word extends Actor
+public class Word extends Actor 
 {
     //array of letters
-    public Letters[] word;    
+    public Letters[] word;   
 
-    int length, letterIndex, numLeft;     //length of word, index of letter that needs to be typed
+    int length, letterIndex, firstIndex;     //length of word, index of letter that needs to be typed
     String chosenWord;                       //word chosen
     World world;
     
     public Word(World world) throws IOException
     {
         this.world = world;
+        
+        setImage((GreenfootImage) null);
 
         //pick word player has to type
         int line = new Random().nextInt(4279);
@@ -36,7 +38,7 @@ public class Word extends Actor
             word[i] = new Letters(chosenWord.substring(i,i+1),world);
         }
 
-        letterIndex = numLeft = 0;
+        letterIndex = firstIndex = 0;
         displayWord();
     }
 
@@ -46,16 +48,23 @@ public class Word extends Actor
         String keyPressed = Greenfoot.getKey();
         if(keyPressed != null)
         {        
-            Letters currentLetter = word[letterIndex];
+            Letters currentLetter;
 
             //check if key pressed is a letter, ensure letterIndex is within word index limits
             if(word[0].letter.containsKey(keyPressed) && letterIndex < length)
             {
+                currentLetter = word[letterIndex];
+
                 //if the letter is correct
-                if(keyPressed.equals(currentLetter.lett) && letterIndex == numLeft
+                if(keyPressed.equals(currentLetter.lett) && letterIndex == firstIndex)
                 {
                     currentLetter.removeImage(currentLetter.lett);
-                    numLeft++;
+                    firstIndex++;
+                    
+                    if(letterIndex == length - 1)
+                    {
+                        world.removeObject(this);
+                    }
                 }
                 //if letter is incorrect
                 else
@@ -63,25 +72,30 @@ public class Word extends Actor
                     currentLetter.toRed(currentLetter.lett);
                 }
 
-                if(letterIndex < length - 1)
+                if(letterIndex < length)
                 {
                     letterIndex++;
                 }
             }
-            else
+            else if(keyPressed == "backspace" && letterIndex > 0)
             {
-                //check if backspaced pressed and word index greater than 0
-                if(keyPressed == "backspace" && letterIndex > numLeft)
+                //set current letter to index before to change it back to grey
+                currentLetter = word[letterIndex - 1];
+
+                //check if backspaced pressed and word index greater than index of first visible letter
+                if(letterIndex > firstIndex || letterIndex == length - 1)
                 {
                     currentLetter.toGrey(currentLetter.lett);
-                    if(letterIndex != 0)
+                    
+                    if(letterIndex > firstIndex)
                     {
                         letterIndex--;
+                        System.out.println(currentLetter.letter.get(currentLetter.lett));
                     }
                 }
             }
-            displayWord();
             System.out.println(letterIndex);
+            displayWord();
         }
     }
 
