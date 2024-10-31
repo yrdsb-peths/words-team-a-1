@@ -90,11 +90,9 @@ public class Word extends Actor
                     if(letterIndex > firstIndex)
                     {
                         letterIndex--;
-                        System.out.println(currentLetter.letter.get(currentLetter.lett));
                     }
                 }
             }
-            System.out.println(letterIndex);
             displayWord();
         }
     }
