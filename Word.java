@@ -7,49 +7,55 @@ public class Word extends Actor
     //array of letters
     public Letters[] word;    
 
-    int length, letterIndex;           //length of word, index of letter that needs to be typed
-    String chosenWord;               //word chosen
+    int length, letterIndex, numLeft;     //length of word, index of letter that needs to be typed
+    String chosenWord;                       //word chosen
+    World world;
     
-    
-    public Word() throws IOException
+    public Word(World world) throws IOException
     {
+        this.world = world;
+
         //pick word player has to type
         int line = new Random().nextInt(4279);
 
+        //get word from textfile
         FileInputStream file = new FileInputStream("wordList.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(file));
         for(int i = 0; i < line; i++)
         {
             br.readLine();
         }
-        
         chosenWord = br.readLine();
         
+        //set up array of letters
         length = chosenWord.length();
         word = new Letters[length];
+
         for(int i = 0; i < length;i++)
         {
-            word[i] = new Letters(chosenWord.substring(i,i+1));
+            word[i] = new Letters(chosenWord.substring(i,i+1),world);
         }
-        letterIndex = 0;
 
+        letterIndex = numLeft = 0;
+        displayWord();
     }
 
     public void act()
     {
-        displayWord();
         //check for keystrokes, update word array's image value
         String keyPressed = Greenfoot.getKey();
         if(keyPressed != null)
         {        
             Letters currentLetter = word[letterIndex];
+
             //check if key pressed is a letter, ensure letterIndex is within word index limits
             if(word[0].letter.containsKey(keyPressed) && letterIndex < length)
             {
                 //if the letter is correct
-                if(keyPressed.equals(currentLetter.lett))
+                if(keyPressed.equals(currentLetter.lett) && letterIndex == numLeft
                 {
-                    
+                    currentLetter.removeImage(currentLetter.lett);
+                    numLeft++;
                 }
                 //if letter is incorrect
                 else
@@ -65,7 +71,7 @@ public class Word extends Actor
             else
             {
                 //check if backspaced pressed and word index greater than 0
-                if(keyPressed == "backspace" && letterIndex >= 0)
+                if(keyPressed == "backspace" && letterIndex > numLeft)
                 {
                     currentLetter.toGrey(currentLetter.lett);
                     if(letterIndex != 0)
@@ -74,7 +80,7 @@ public class Word extends Actor
                     }
                 }
             }
-
+            displayWord();
             System.out.println(letterIndex);
         }
     }
@@ -84,10 +90,11 @@ public class Word extends Actor
      */
     private void displayWord()
     {
+        world.removeObjects(world.getObjects(Letters.class));
         //add letters to array word, add letters to world
         for(int i = 0; i < length; i++)
         {
-            getWorld().addObject(word[i], i*30 + 100, 100);
+            world.addObject(word[i], i*30 + 100, 100);
         }
     }
 }

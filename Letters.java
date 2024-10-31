@@ -6,18 +6,18 @@ public class Letters extends Actor
     public Map<String,String> letter;
     public String lett;
     public GreenfootImage image;
+    public World world;
 
-    public Letters(String lett)
+    public Letters(String lett, World world)
     {
         //set up map
-        letter= new HashMap<String, String>();
+        letter= new HashMap<>();
         fillMap();
 
         this.lett = lett;
-
+        this.world = world;
         //set up image for letter
         changeImage();
-
     }
 
     public void act(){}
@@ -28,7 +28,8 @@ public class Letters extends Actor
      */
     public void removeImage(String key)
     {
-
+        letter.replace(key, "null");
+        changeImage();
     }
 
     /**
@@ -48,7 +49,6 @@ public class Letters extends Actor
 
             //set up image for letter
             changeImage();
-
         }
     }
 
@@ -67,7 +67,6 @@ public class Letters extends Actor
             letter.replace(key,newImage);
             changeImage();
         }
-
     }
     
     /**
@@ -75,9 +74,17 @@ public class Letters extends Actor
      */
     private void changeImage()
     {
-        image = new GreenfootImage(letter.get(lett));
-        image.scale(30,30);
-        setImage(image);
+        //world.removeObject(this);
+        if(letter.get(lett).equals("null"))
+        {
+            setImage((GreenfootImage)null);
+        }
+        else
+        {
+            image = new GreenfootImage(letter.get(lett));
+            image.scale(30,30);
+            setImage(image);
+        }
     }
 
     /**

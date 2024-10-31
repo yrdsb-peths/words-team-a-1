@@ -5,7 +5,7 @@ public class MyWorld extends World
     public MyWorld() throws IOException  
     {
         super(600, 400, 1);
-        Word test = new Word();
+        Word test = new Word(this);
         addObject(test,100,100);
         
         Avatar hero = new Avatar(); 
