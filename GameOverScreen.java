@@ -34,4 +34,11 @@ public class GameOverScreen extends World {
             addObject(scoreLabel2, 295, 200);
         }
     }
+    
+    // Add the game screen when done
+    // public void act() {
+    //     if(Greenfoot.isKeyDown("space")) {
+    //         Greenfoot.setWorld(menuScreen);
+    //     }
+    // }
 }
