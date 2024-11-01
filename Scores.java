@@ -7,6 +7,9 @@ public class Scores {
     public static void addScore(int score) {
         scores.put(attemptNumber, score);
         attemptNumber++;
+        if (attemptNumber>5){
+            attemptNumber=1;
+        }   
     }
 
     public static Integer returnScoreValue(int attempt) {
