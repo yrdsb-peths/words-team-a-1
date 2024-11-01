@@ -12,6 +12,7 @@ public class InstructionScreen extends World {
 
     public InstructionScreen() {
         super(600, 400, 1);
+        setBackground(new GreenfootImage("7481714.png"));
         instructionLabel = new Label(instructions[currentIndex]);
         addObject(instructionLabel, 300, 200); 
 
