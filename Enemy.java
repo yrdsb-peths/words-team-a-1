@@ -11,7 +11,7 @@ public class Enemy extends Actor
         for(int i = 0; i < idleWalk.length; i++)
         {
             idleWalk[i] = new GreenfootImage("images/enemies/1/walk" + i + ".png");
-            idleWalk[i].scale(100,100); 
+            idleWalk[i].scale(120,120); 
         }
         
         animationTimer.mark();
@@ -29,10 +29,16 @@ public class Enemy extends Actor
         
         setImage(idleWalk[imageIndex]);
         imageIndex = (imageIndex + 1) % idleWalk.length;
+        move(-5);
     }
     
     public void act()
     {
-        walkAnimation(); 
+        walkAnimation();
+        
+        MyGame world = (MyGame) getWorld();
+        if(isTouching(Avatar.class)) {
+            world.gameOver(); 
+        }
     }
 }
