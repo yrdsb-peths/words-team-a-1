@@ -117,16 +117,18 @@ public class Word extends Actor
     private String getWord() throws IOException
     {
         //pick line player has to type
-        int line = new Random().nextInt(3982);
+        int line = new Random().nextInt(3981);
 
         //get word from textfile
         FileInputStream file = new FileInputStream("wordList.txt");
-        BufferedReader br = new BufferedReader(new InputStreamReader(file));
-        for(int i = 0; i < line; i++)
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(file)))
         {
-            br.readLine();
+            for(int i = 0; i < line; i++)
+            {
+                br.readLine();
+            }
+            return br.readLine();
         }
-        return br.readLine();
     }
 
     /**
