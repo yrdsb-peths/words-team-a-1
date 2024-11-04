@@ -24,7 +24,6 @@ public class MyWorld extends World
             word = new Word(this);
             addObject(word, 0, 0);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

@@ -84,7 +84,7 @@ public class Letters extends Actor
         else
         {
             image = new GreenfootImage(letter.get(lett));
-            image.scale(50,50);
+            image.scale(40,40);
             setImage(image);
         }
     }
@@ -123,5 +123,3 @@ public class Letters extends Actor
         letter.put("z", "images/black letters/25_black letters.png ");
     }
 }
-
-
