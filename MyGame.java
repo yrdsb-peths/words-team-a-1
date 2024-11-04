@@ -17,8 +17,15 @@ public class MyGame extends World {
         new MyGame(); 
     }
     
+    public boolean isRunning = true;
+    
+    public boolean isRunning() {
+        return isRunning; 
+    }
+    
     public void gameOver() {
-        Label gameOver = new Label("Game Over!", 50);
+        Label gameOver = new Label("Game Over!", 70);
         addObject(gameOver, 300, 200);
+        isRunning = false; 
     }
 }

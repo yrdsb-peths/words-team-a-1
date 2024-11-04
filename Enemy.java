@@ -21,24 +21,28 @@ public class Enemy extends Actor
     
     public void walkAnimation()
     {
-        if(animationTimer.millisElapsed() < 200)
-        {
-            return;
+        MyGame world = (MyGame) getWorld(); 
+        if(world.isRunning()) {
+            if(animationTimer.millisElapsed() < 200)
+            {
+                return;
+            }
+            animationTimer.mark();
+            
+            setImage(idleWalk[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleWalk.length;
+            move(-5);
         }
-        animationTimer.mark();
-        
-        setImage(idleWalk[imageIndex]);
-        imageIndex = (imageIndex + 1) % idleWalk.length;
-        move(-5);
     }
     
     public void act()
     {
-        walkAnimation();
-        
         MyGame world = (MyGame) getWorld();
-        if(isTouching(Avatar.class)) {
-            world.gameOver(); 
+        if(world.isRunning()) {
+            walkAnimation();
+            if(isTouching(Avatar.class)) {
+                world.gameOver(); 
+            }
         }
     }
 }
