@@ -45,6 +45,9 @@ public class Avatar extends Actor
     
     public void act()
     {
-        animateAvatar(); 
+        MyGame world = (MyGame) getWorld(); 
+        if(world.isRunning()) {
+            animateAvatar();    
+        } 
     }
 }
