@@ -37,11 +37,11 @@ public class Letters extends Actor
      */
     public void toRed(String key)
     {
-        if(letter.get(key).contains("grey"))
+        if(letter.get(key).contains("black"))
         {
             //create string containing address of red version of letter
             String newImage = "images/red letters/";
-            newImage = newImage.concat(letter.get(key).substring(20,23) + "red letters.png");
+            newImage = newImage.concat(letter.get(key).substring(21,24) + "red letters.png");
 
             //replace value at key with new red version of letter
             letter.replace(key, newImage);
@@ -52,21 +52,24 @@ public class Letters extends Actor
     }
 
     /**
-     * This method changes the value of the letter hashmap to the grey version of the letters
+     * This method changes the value of the letter hashmap to the black version of the letters
      * @param key
      */
-    public void toGrey(String key)
+    public void toBlack(String key)
     {
         //only changes colour if value is already red
         if(letter.get(key).contains("red"))
         {
-            //create string with address of grey versiou of letter
-            String newImage = "images/grey letters/";
-            newImage = newImage.concat(letter.get(key).substring(19,22) + "grey letters.png");
+            //create string with address of black versiou of letter
+            String newImage = "images/black letters/";
+            newImage = newImage.concat(letter.get(key).substring(19,22) + "black letters.png");
 
             //replace value in hashmap and update
             letter.replace(key,newImage);
+
+            //set up image for letter
             changeImage();
+
         }
     }
     
@@ -93,32 +96,32 @@ public class Letters extends Actor
     public void fillMap()
     {
         //put all letters into hashmap
-        letter.put("a", "images/grey letters/00_grey letters.png ");
-        letter.put("b", "images/grey letters/01_grey letters.png ");
-        letter.put("c", "images/grey letters/02_grey letters.png ");
-        letter.put("d", "images/grey letters/03_grey letters.png ");
-        letter.put("e", "images/grey letters/04_grey letters.png ");
-        letter.put("f", "images/grey letters/05_grey letters.png ");
-        letter.put("g", "images/grey letters/06_grey letters.png ");
-        letter.put("h", "images/grey letters/07_grey letters.png ");
-        letter.put("i", "images/grey letters/08_grey letters.png ");
-        letter.put("j", "images/grey letters/09_grey letters.png ");
-        letter.put("k", "images/grey letters/10_grey letters.png ");
-        letter.put("l", "images/grey letters/11_grey letters.png ");
-        letter.put("m", "images/grey letters/12_grey letters.png ");
-        letter.put("n", "images/grey letters/13_grey letters.png ");
-        letter.put("o", "images/grey letters/14_grey letters.png ");
-        letter.put("p", "images/grey letters/15_grey letters.png ");
-        letter.put("q", "images/grey letters/16_grey letters.png ");
-        letter.put("r", "images/grey letters/17_grey letters.png ");
-        letter.put("s", "images/grey letters/18_grey letters.png ");
-        letter.put("t", "images/grey letters/19_grey letters.png ");
-        letter.put("u", "images/grey letters/20_grey letters.png ");
-        letter.put("v", "images/grey letters/21_grey letters.png ");
-        letter.put("w", "images/grey letters/22_grey letters.png ");
-        letter.put("x", "images/grey letters/23_grey letters.png ");
-        letter.put("y", "images/grey letters/24_grey letters.png ");
-        letter.put("z", "images/grey letters/25_grey letters.png ");
+        letter.put("a", "images/black letters/00_black letters.png ");
+        letter.put("b", "images/black letters/01_black letters.png ");
+        letter.put("c", "images/black letters/02_black letters.png ");
+        letter.put("d", "images/black letters/03_black letters.png ");
+        letter.put("e", "images/black letters/04_black letters.png ");
+        letter.put("f", "images/black letters/05_black letters.png ");
+        letter.put("g", "images/black letters/06_black letters.png ");
+        letter.put("h", "images/black letters/07_black letters.png ");
+        letter.put("i", "images/black letters/08_black letters.png ");
+        letter.put("j", "images/black letters/09_black letters.png ");
+        letter.put("k", "images/black letters/10_black letters.png ");
+        letter.put("l", "images/black letters/11_black letters.png ");
+        letter.put("m", "images/black letters/12_black letters.png ");
+        letter.put("n", "images/black letters/13_black letters.png ");
+        letter.put("o", "images/black letters/14_black letters.png ");
+        letter.put("p", "images/black letters/15_black letters.png ");
+        letter.put("q", "images/black letters/16_black letters.png ");
+        letter.put("r", "images/black letters/17_black letters.png ");
+        letter.put("s", "images/black letters/18_black letters.png ");
+        letter.put("t", "images/black letters/19_black letters.png ");
+        letter.put("u", "images/black letters/20_black letters.png ");
+        letter.put("v", "images/black letters/21_black letters.png ");
+        letter.put("w", "images/black letters/22_black letters.png ");
+        letter.put("x", "images/black letters/23_black letters.png ");
+        letter.put("y", "images/black letters/24_black letters.png ");
+        letter.put("z", "images/black letters/25_black letters.png ");
     }
 }
 

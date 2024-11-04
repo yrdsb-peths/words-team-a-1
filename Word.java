@@ -28,7 +28,6 @@ public class Word extends Actor
         letterIndex = firstIndex = 0;
         displayWord();
         setImage((GreenfootImage) null);
-
     }
 
     public void act()
@@ -54,6 +53,8 @@ public class Word extends Actor
                     //if letter was the last one, remove entire word from world
                     if(letterIndex == length - 1)
                     {
+
+                        ((MyWorld) getWorld()).addWord();
                         world.removeObject(this);
                     }
                 }
@@ -69,15 +70,16 @@ public class Word extends Actor
                     letterIndex++;
                 }
             }
-            else if(keyPressed == "backspace" && letterIndex > 0)
+            else if(keyPressed.equals("backspace") && letterIndex > 0)
             {
                 //set current letter to previous index to change it back to grey
                 currentLetter = word[letterIndex - 1];
+                System.out.println("back");
 
                 //word index greater than index of first visible letter
                 if(letterIndex > firstIndex || letterIndex == length - 1)
                 {
-                    currentLetter.toGrey(currentLetter.lett);
+                    currentLetter.toBlack(currentLetter.lett);
                     
                     //decrease index user is currently on (move back a letter)
                     if(letterIndex > firstIndex)
