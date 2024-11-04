@@ -4,7 +4,7 @@ import java.util.HashMap;
 public class GameOverScreen extends World {
     GFLabel gameOverLabel = new GFLabel("Game Over", 90);
     GFLabel highscoresLabel = new GFLabel("Recent Scores: ", 35);
-    GFLabel instructionsLabel = new GFLabel("Press [SPACE] to play agian", 40);
+    GFLabel instructionsLabel = new GFLabel("Press [SPACE] to play again", 40);
     
     GFLabel scoreLabel1;
     GFLabel scoreLabel2;
@@ -19,7 +19,7 @@ public class GameOverScreen extends World {
         
         addObject(gameOverLabel, 295, 75);
         addObject(highscoresLabel, 295, 195);
-        addObject(instructionsLabel, 295, 360);
+        addObject(instructionsLabel, 300, 360);
         
         // Use these when adding  score upon death in the main game loop
         // Delete when done
