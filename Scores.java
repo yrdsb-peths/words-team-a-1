@@ -1,18 +1,20 @@
 import java.util.HashMap;
 
 public class Scores {
-    public static HashMap<Integer, Integer> scores = new HashMap<>();
-    public static int attemptNumber = 1;
+    private static HashMap<Integer, Integer> scores = new HashMap<>();
 
     public static void addScore(int score) {
-        scores.put(attemptNumber, score);
-        attemptNumber++;
-        if (attemptNumber>5){
-            attemptNumber=1;
-        }   
+        // Move existing scores down by one rank everytime you add a score
+        for (int i = 6; i > 1; i--) {
+            scores.put(i, scores.get(i - 1));
+        }
+
+        // Add new score at the top (rank 1)
+        scores.put(1, score);
+
     }
 
     public static Integer returnScoreValue(int attempt) {
-        return scores.get(attempt); 
+        return scores.get(attempt);
     }
 }
