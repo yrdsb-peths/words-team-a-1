@@ -69,7 +69,6 @@ public class Letters extends Actor
 
             //set up image for letter
             changeImage();
-
         }
     }
     

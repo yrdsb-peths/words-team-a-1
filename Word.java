@@ -102,7 +102,7 @@ public class Word extends Actor
         //add letters to array word, add letters to world
         for(int i = 0; i < length; i++)
         {
-            world.addObject(word[i], i*40 + getXConstant(), 100);
+            world.addObject(word[i], i*40 + getXConstant(), 150);
         }
     }
 
