@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import greenfoot.*;
 
 public class MyGame extends World {
@@ -5,9 +7,22 @@ public class MyGame extends World {
         super(600, 400, 1); 
         setBackground(new GreenfootImage("7481714.png"));
         Greenfoot.setWorld(new MenuScreen());
+
+        addWord();
     }
 
     public static void main(String[] args) {
         new MyGame(); 
+    }
+
+    public void addWord()
+    {
+        Word word;
+        try {
+            word = new Word(this);
+            addObject(word, 0, 0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
