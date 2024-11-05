@@ -5,11 +5,11 @@ import java.io.*;
 public class Word extends Actor 
 {
     //array of letters
-    public Letters[] word;   
+    public List<Letters> word = new ArrayList<>();
 
-    int length, letterIndex, firstIndex;     //length of word, current index of letter, index of first visible letter
-    String chosenWord;                       //word player has to type
-    World world;                             //world we're currently in
+    int length, letterIndex, firstIndex;       //length of word, current index of letter, index of first visible letter
+    String chosenWord;                         //word player has to type
+    World world;                               //world we're currently in
 
     public Word(World world) throws IOException
     {
@@ -20,12 +20,11 @@ public class Word extends Actor
         
         //set up array of letters
         length = chosenWord.length();
-        word = new Letters[length];
 
-        //put Letters into array word
-        for(int i = 0; i < length;i++)
+        //put Letters into word list
+        for(int i = 0; i < length; i++)
         {
-            word[i] = new Letters(chosenWord.substring(i,i+1),world);
+            word.add(i,(new Letters(chosenWord.substring(i,i+1), world)));
         }
 
         letterIndex = 0;
@@ -42,9 +41,10 @@ public class Word extends Actor
             Letters currentLetter;
 
             //check if key pressed is a letter, ensure letterIndex is within word index limits
-            if(word[0].letter.containsKey(keyPressed) && letterIndex < length)
+            if(word.get(0).letter.containsKey(keyPressed) && letterIndex < length)
             {
-                currentLetter = word[letterIndex];
+                //currentLetter = word[letterIndex];
+                currentLetter = word.get(letterIndex);
 
                 //if the letter is correct
                 if(keyPressed.equals(currentLetter.lett) && letterIndex == firstIndex)
@@ -76,7 +76,9 @@ public class Word extends Actor
             else if(keyPressed.equals("backspace") && letterIndex > 0)
             {
                 //set current letter to previous index to change it back to grey
-                currentLetter = word[letterIndex - 1];
+                
+                //currentLetter = word[letterIndex - 1];
+                currentLetter = word.get(letterIndex - 1);
 
                 //word index greater than index of first visible letter
                 if(letterIndex > firstIndex || letterIndex == length - 1)
@@ -102,10 +104,11 @@ public class Word extends Actor
     {
         world.removeObjects(world.getObjects(Letters.class));
 
-        //add letters to array word, add letters to world
+        
+        //add letters to world
         for(int i = 0; i < length; i++)
         {
-            world.addObject(word[i], (i*40) + 20 + xConstant(), 140);
+            world.addObject(word.get(i), (i*40) + 20 + xConstant(), 140);
         }
     }
 
