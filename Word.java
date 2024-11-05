@@ -35,7 +35,6 @@ public class Word extends Actor
 
     public void act()
     {
-        
         //check for keystrokes, update letters's image value
         String keyPressed = Greenfoot.getKey();
         if(keyPressed != null)
@@ -54,8 +53,12 @@ public class Word extends Actor
                     currentLetter.removeImage(currentLetter.lett);
                     firstIndex++;
                     
-                    //adds 10 points to each correct letter typed
+                    // move the enemy back
+                    moveEnemy();
+                    
+                    //adds 10 points to the score
                     MyGame.increaseScore(10);
+                    
                     
                     //if letter was the last one, remove entire word from world
                     if(letterIndex == length - 1)
@@ -142,5 +145,22 @@ public class Word extends Actor
     {
         return ((world.getWidth()/2) - (length/2 * 40));
     }
-}
+    
+    /**
+     * Moves the enemy 5 pixels to the right
+     */
+    private void moveEnemy()
+    {
+        // Get the world this actor is in
+        MyGame world = (MyGame) getWorld();
 
+        // Get the enemy in the world
+        Enemy enemy = (Enemy) world.getObjects(Enemy.class).get(0);
+
+        // If enemy exists, move it
+        if (enemy != null)
+        {
+            enemy.setLocation(enemy.getX() + 5, enemy.getY());
+        }
+    }
+}

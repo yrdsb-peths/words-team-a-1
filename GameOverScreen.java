@@ -4,7 +4,7 @@ import java.util.HashMap;
 public class GameOverScreen extends World {
     GFLabel gameOverLabel = new GFLabel("Game Over", 90);
     GFLabel highscoresLabel = new GFLabel("Recent Scores: ", 35);
-    GFLabel instructionsLabel = new GFLabel("Press [SPACE] to play again", 40);
+    GFLabel instructionsLabel = new GFLabel("Press [ENTER] to play again", 40);
     
     GFLabel scoreLabel1;
     GFLabel scoreLabel2;
@@ -59,7 +59,7 @@ public class GameOverScreen extends World {
     
     // Add the game screen when done
     public void act() {
-         if(Greenfoot.isKeyDown("space")) {
+         if(Greenfoot.isKeyDown("enter")) {
             MyGame.score=0;
             Greenfoot.setWorld(new MyGame());
         }

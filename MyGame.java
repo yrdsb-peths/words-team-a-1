@@ -19,7 +19,7 @@ public class MyGame extends World {
         
         // add score counter to top right 
         scoreLabel = new GFLabel(score, 40);
-        addObject(scoreLabel,525,45);
+        addObject(scoreLabel,500,45);
         
         addWord();
     }
