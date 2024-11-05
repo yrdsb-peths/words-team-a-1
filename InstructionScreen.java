@@ -36,10 +36,18 @@ public class InstructionScreen extends World {
     }
 
     private void nextInstruction() {
-        if (currentIndex < instructions.length - 1) {
+        if (currentIndex == instructions.length - 1) {
+            startGame();
+        }
+        else
+        {
             currentIndex++;
             updateInstruction();
         }
+    }
+    
+    private void startGame() {
+        Greenfoot.setWorld(new MyGame());
     }
 
     private void updateInstruction() {
