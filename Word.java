@@ -35,6 +35,7 @@ public class Word extends Actor
 
     public void act()
     {
+        
         //check for keystrokes, update letters's image value
         String keyPressed = Greenfoot.getKey();
         if(keyPressed != null)
@@ -53,10 +54,14 @@ public class Word extends Actor
                     currentLetter.removeImage(currentLetter.lett);
                     firstIndex++;
                     
+                    //adds 10 points to each correct letter typed
+                    MyGame.increaseScore(10);
+                    
                     //if letter was the last one, remove entire word from world
                     if(letterIndex == length - 1)
                     {
-
+                        //adds 200 points for each correct word typed
+                        MyGame.increaseScore(200);
                         ((MyGame) getWorld()).addWord();
                         world.removeObject(this);
                     }
@@ -101,7 +106,6 @@ public class Word extends Actor
     private void displayWord()
     {
         world.removeObjects(world.getObjects(Letters.class));
-
         //add letters to array word, add letters to world
         for(int i = 0; i < length; i++)
         {

@@ -80,6 +80,7 @@ public class Letters extends Actor
         if(letter.get(lett).equals("null"))
         {
             setImage((GreenfootImage)null);
+            
         }
         else
         {

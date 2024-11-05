@@ -21,16 +21,6 @@ public class GameOverScreen extends World {
         addObject(highscoresLabel, 295, 195);
         addObject(instructionsLabel, 300, 360);
         
-        // Use these when adding  score upon death in the main game loop
-        // Delete when done
-        Scores.addScore(1400);
-        Scores.addScore(1100);
-        Scores.addScore(900);
-        Scores.addScore(800);
-        Scores.addScore(600);
-        Scores.addScore(857300);
-
-        
 
         Integer score1 = Scores.returnScoreValue(1);
         Integer score2 = Scores.returnScoreValue(2);
@@ -39,7 +29,8 @@ public class GameOverScreen extends World {
         Integer score5 = Scores.returnScoreValue(5);
         Integer score6 = Scores.returnScoreValue(6);
         
-    
+        // displayed each score, if appliciable
+        
         if(score1!=null){
             scoreLabel1 = new GFLabel("Your Score: " + score1.toString(), 50);
             addObject(scoreLabel1, 295, 145);
@@ -69,6 +60,7 @@ public class GameOverScreen extends World {
     // Add the game screen when done
     public void act() {
          if(Greenfoot.isKeyDown("space")) {
+            MyGame.score=0;
             new MyGame();
         }
     }

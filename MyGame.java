@@ -2,9 +2,10 @@ import java.io.IOException;
 import greenfoot.*;
 
 public class MyGame extends World {
-    
+    public static int score=0;
     public boolean isRunning = true;
-
+    
+    static GFLabel scoreLabel;
     public MyGame() {
         super(600, 400, 1); 
         setBackground(new GreenfootImage("7481714.png"));
@@ -15,6 +16,10 @@ public class MyGame extends World {
         
         Enemy enemy = new Enemy();
         addObject(enemy, 550, 300);
+        
+        // add score counter to top right 
+        scoreLabel = new GFLabel(score, 40);
+        addObject(scoreLabel,575,25);
         
         addWord();
     }
@@ -28,9 +33,11 @@ public class MyGame extends World {
     }
     
     public void gameOver() {
-        Label gameOver = new Label("Game Over!", 70);
-        addObject(gameOver, 300, 200);
-        isRunning = false; 
+        //Label gameOver = new Label("Game Over!", 70);
+        //addObject(gameOver, 300, 200);
+        //isRunning = false;
+        Scores.addScore(score);
+        Greenfoot.setWorld(new GameOverScreen());
     }
 
     public void addWord()
@@ -42,5 +49,10 @@ public class MyGame extends World {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    public static void increaseScore(int addScore){
+        score+=addScore;
+        scoreLabel.setValue(score);
     }
 }
