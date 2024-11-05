@@ -483,7 +483,6 @@ spurious
 freezing
 glamorous
 famous
-new
 instinctive
 nasty
 exultant
@@ -491,11 +490,9 @@ seemly
 tawdry
 maniacal
 wrathful
-shy
 nutritious
 idiotic
 worried
-bad
 stupid
 ruddy
 wholesale
@@ -919,7 +916,6 @@ aftershave
 afterthought
 agenda
 agreement
-air
 airbus
 airmail
 airplane
@@ -1160,12 +1156,10 @@ bulb
 bull
 bulldozer
 bumper
-bun
 burglar
 burma
 burn
 burst
-bus
 bush
 business
 butane
@@ -1429,7 +1423,6 @@ damage
 dance
 dancer
 danger
-daniel
 dash
 dashboard
 database
@@ -1439,7 +1432,6 @@ dead
 deadline
 deal
 death
-deborah
 debt
 debtor
 decade
@@ -1882,20 +1874,15 @@ invoice
 iris
 iron
 island
-israel
-italian
 jacket
 jaguar
 jail
 january
-jar
 jasmine
-jaw
 jeans
 jeep
 jelly
 jellyfish
-jet
 jewel
 jogging
 join
@@ -2131,7 +2118,6 @@ neon
 nephew
 nerve
 nest
-net
 network
 news
 newsprint
@@ -2270,7 +2256,6 @@ peripheral
 permission
 persian
 person
-peru
 pest
 pharmacist
 pheasant
@@ -2468,7 +2453,6 @@ riverbed
 road
 roadway
 roast
-robert
 robin
 rock
 rocket
@@ -2485,8 +2469,6 @@ rowboat
 rubber
 rugby
 rule
-russia
-russian
 rutabaga
 ruth
 sack
@@ -2776,7 +2758,6 @@ taste
 taurus
 taxi
 taxicab
-tea
 teacher
 teaching
 team
@@ -2885,9 +2866,6 @@ twine
 twist
 typhoon
 tyvek
-uganda
-ukraine
-ukrainian
 umbrella
 uncle
 underclothes
@@ -3268,7 +3246,6 @@ drive
 drop
 drown
 drum
-dry
 dust
 dwell
 earn
@@ -3489,7 +3466,6 @@ lose
 love
 maintain
 make
-man
 manage
 manipulate
 manufacture

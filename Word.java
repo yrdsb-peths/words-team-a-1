@@ -16,6 +16,7 @@ public class Word extends Actor
         setImage((GreenfootImage) null);
 
         this.world = world;
+
         chosenWord = getWord();
         
         //set up array of letters
@@ -56,8 +57,8 @@ public class Word extends Actor
                     //if letter was the last one, remove entire word from world
                     if(letterIndex == length - 1)
                     {
-
                         ((MyGame) getWorld()).addWord();
+                        ((MyGame) getWorld()).score += 100;
                         world.removeObject(this);
                     }
                 }
@@ -76,8 +77,6 @@ public class Word extends Actor
             else if(keyPressed.equals("backspace") && letterIndex > 0)
             {
                 //set current letter to previous index to change it back to grey
-                
-                //currentLetter = word[letterIndex - 1];
                 currentLetter = word.get(letterIndex - 1);
 
                 //word index greater than index of first visible letter
@@ -120,7 +119,7 @@ public class Word extends Actor
     private String getWord() throws IOException
     {
         //pick line player has to type
-        int line = new Random().nextInt(3981);
+        int line = new Random().nextInt(3957);
 
         //get word from textfile
         FileInputStream file = new FileInputStream("wordList.txt");
