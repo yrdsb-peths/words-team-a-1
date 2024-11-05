@@ -3,6 +3,7 @@ import greenfoot.*;
 public class InstructionScreen extends World {
     private String[] instructions = {
         "In order to defeat the enemy, you must quickly type words that appear on a screen.",
+        "then you must press space for a new word to appear",
         "The enemy will slowly move towards you and if the enemy touches you, you lose.",
         "Otherwise you win and the score you get depends on the word you type. ",
         "To begin the game, click the button, Next." 
@@ -36,10 +37,18 @@ public class InstructionScreen extends World {
     }
 
     private void nextInstruction() {
-        if (currentIndex < instructions.length - 1) {
+        if (currentIndex == instructions.length - 1) {
+            startGame();
+        }
+        else
+        {
             currentIndex++;
             updateInstruction();
         }
+    }
+    
+    private void startGame() {
+        Greenfoot.setWorld(new MyGame());
     }
 
     private void updateInstruction() {
