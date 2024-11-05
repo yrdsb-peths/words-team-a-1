@@ -4,7 +4,6 @@ import greenfoot.*;
 public class MyGame extends World {
     
     public boolean isRunning = true;
-    public int score = 0;
 
     public MyGame() {
         super(600, 400, 1); 

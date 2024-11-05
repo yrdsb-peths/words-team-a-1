@@ -1,11 +1,11 @@
- import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Enemy extends Actor
 {
     SimpleTimer animationTimer = new SimpleTimer();
-    int imageIndex, prevScore = 0;
+    int imageIndex = 0;
     GreenfootImage[] idleWalk = new GreenfootImage[6];
-
+    
     public Enemy()
     {
         for(int i = 0; i < idleWalk.length; i++)
@@ -31,17 +31,7 @@ public class Enemy extends Actor
             
             setImage(idleWalk[imageIndex]);
             imageIndex = (imageIndex + 1) % idleWalk.length;
-            
-            int currentScore = ((MyGame) getWorld()).score;
-            if(prevScore != currentScore)
-            {
-                move(30);
-                prevScore = currentScore;
-            }
-            else
-            {
-                move(-5);
-            }
+            move(-5);
         }
     }
     

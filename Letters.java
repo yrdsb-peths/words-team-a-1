@@ -60,7 +60,7 @@ public class Letters extends Actor
         //only changes colour if value is already red
         if(letter.get(key).contains("red"))
         {
-            //create string with address of black version of letter
+            //create string with address of black versiou of letter
             String newImage = "images/black letters/";
             newImage = newImage.concat(letter.get(key).substring(19,22) + "black letters.png");
 
