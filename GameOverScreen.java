@@ -61,7 +61,7 @@ public class GameOverScreen extends World {
     public void act() {
          if(Greenfoot.isKeyDown("space")) {
             MyGame.score=0;
-            new MyGame();
+            Greenfoot.setWorld(new MyGame());
         }
     }
 }
