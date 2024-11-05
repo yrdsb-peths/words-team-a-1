@@ -57,7 +57,7 @@ public class Word extends Actor
                     if(letterIndex == length - 1)
                     {
 
-                        ((MyWorld) getWorld()).addWord();
+                        ((MyGame) getWorld()).addWord();
                         world.removeObject(this);
                     }
                 }
