@@ -13,6 +13,8 @@ public class Word extends Actor
 
     public Word(World world) throws IOException
     {
+        setImage((GreenfootImage) null);
+
         this.world = world;
         chosenWord = getWord();
         
@@ -20,15 +22,15 @@ public class Word extends Actor
         length = chosenWord.length();
         word = new Letters[length];
 
+        //put Letters into array word
         for(int i = 0; i < length;i++)
         {
             word[i] = new Letters(chosenWord.substring(i,i+1),world);
         }
 
-        letterIndex = firstIndex = 0;
+        letterIndex = 0;
+        firstIndex = 0;
         displayWord();
-        setImage((GreenfootImage) null);
-
     }
 
     public void act()
@@ -54,6 +56,8 @@ public class Word extends Actor
                     //if letter was the last one, remove entire word from world
                     if(letterIndex == length - 1)
                     {
+
+                        ((MyGame) getWorld()).addWord();
                         world.removeObject(this);
                     }
                 }
@@ -69,7 +73,7 @@ public class Word extends Actor
                     letterIndex++;
                 }
             }
-            else if(keyPressed == "backspace" && letterIndex > 0)
+            else if(keyPressed.equals("backspace") && letterIndex > 0)
             {
                 //set current letter to previous index to change it back to grey
                 currentLetter = word[letterIndex - 1];
@@ -77,7 +81,7 @@ public class Word extends Actor
                 //word index greater than index of first visible letter
                 if(letterIndex > firstIndex || letterIndex == length - 1)
                 {
-                    currentLetter.toGrey(currentLetter.lett);
+                    currentLetter.toBlack(currentLetter.lett);
                     
                     //decrease index user is currently on (move back a letter)
                     if(letterIndex > firstIndex)
@@ -97,10 +101,11 @@ public class Word extends Actor
     private void displayWord()
     {
         world.removeObjects(world.getObjects(Letters.class));
+
         //add letters to array word, add letters to world
         for(int i = 0; i < length; i++)
         {
-            world.addObject(word[i], i*40 + getXConstant(), 100);
+            world.addObject(word[i], (i*40) + 20 + xConstant(), 140);
         }
     }
 
@@ -112,22 +117,24 @@ public class Word extends Actor
     private String getWord() throws IOException
     {
         //pick line player has to type
-        int line = new Random().nextInt(3982);
+        int line = new Random().nextInt(3981);
 
         //get word from textfile
         FileInputStream file = new FileInputStream("wordList.txt");
-        BufferedReader br = new BufferedReader(new InputStreamReader(file));
-        for(int i = 0; i < line; i++)
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(file)))
         {
-            br.readLine();
+            for(int i = 0; i < line; i++)
+            {
+                br.readLine();
+            }
+            return br.readLine();
         }
-        return br.readLine();
     }
 
     /**
      * Calculates constant x value to center letters on screen
      */
-    private int getXConstant()
+    private int xConstant()
     {
         return ((world.getWidth()/2) - (length/2 * 40));
     }
