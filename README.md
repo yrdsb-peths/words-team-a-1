@@ -6,6 +6,5 @@
   - Used an array list of letters in the words class
   - Used HashMap for scoreboard
   - Used an array list for the instruction screen
-  - Used arrays for both avatar and enemy class
 4. Any other notes you feel you should mention here
 No other notes that I feel the need to mention. 
