@@ -23,8 +23,8 @@ public class InstructionScreen extends World {
        
         if(currentIndex < 3)
         {
-            addObject(new Label("Back"), 100, 300);
-            addObject(new Label("Next"), 500, 300);
+            addObject(new WhiteLabel("Back"), 100, 270);
+            addObject(new WhiteLabel("Next"), 500, 270);
         }
         
     }
