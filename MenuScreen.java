@@ -8,9 +8,9 @@ public class MenuScreen extends World {
         addObject(new Label ("Welcome to the Type to Fight Game!"),300, 200); 
         addObject(new Label ("Click the Start Button to read the instructions and begin the game!"),300, 220);
         addObject(new Button(this::startInstructions), 300, 300); 
-        String start = "Start"; 
-        addObject(new Label ("Start"), 300, 300); 
-         
+        
+        String startTwo = "Start";
+        addObject(new WhiteLabel ("Start"), 300, 270);
     }
 
     private void startInstructions() {
