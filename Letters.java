@@ -40,8 +40,10 @@ public class Letters extends Actor
         if(letter.get(key).contains("black"))
         {
             //create string containing address of red version of letter
-            String newImage = "images/red letters/";
-            newImage = newImage.concat(letter.get(key).substring(21,24) + "red letters.png");
+            String newImage = "images/redLetters/";
+            newImage = newImage.concat(letter.get(key).substring(20,23) + "redLetters.png");
+
+            System.out.println(newImage);
 
             //replace value at key with new red version of letter
             letter.replace(key, newImage);
@@ -61,8 +63,9 @@ public class Letters extends Actor
         if(letter.get(key).contains("red"))
         {
             //create string with address of black versiou of letter
-            String newImage = "images/black letters/";
-            newImage = newImage.concat(letter.get(key).substring(19,22) + "black letters.png");
+            String newImage = "images/blackLetters/";
+            newImage = newImage.concat(letter.get(key).substring(18,21) + "blackLetters.png");
+
 
             //replace value in hashmap and update
             letter.replace(key,newImage);
