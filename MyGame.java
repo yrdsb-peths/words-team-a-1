@@ -18,8 +18,8 @@ public class MyGame extends World {
         addObject(enemy, 550, 300);
         
         // add score counter to top right 
-        scoreLabel = new GFLabel(score, 40);
-        addObject(scoreLabel,500,45);
+        scoreLabel = new GFLabel(score, 70);
+        addObject(scoreLabel,500,70);
         
         addWord();
     }
