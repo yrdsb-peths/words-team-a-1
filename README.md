@@ -1,8 +1,5 @@
 # WORDS! Type To Fight
 
-# Learn Markdown Basics
-[Markdown basics](https://www.markdownguide.org/getting-started/)
-
 1. Names of all group members: Brianna, Maggie, Julie and Carlisa 
 2. The data structures you used, where they are found in your code and a brief summary of why it was appropriate to use
   - Used a hashmap in the letters class to hold the letters (key) and corresponding image (value)
