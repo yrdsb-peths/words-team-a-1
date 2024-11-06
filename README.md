@@ -7,4 +7,4 @@
   - Used HashMap for scoreboard
   - Used an array list for the instruction screen
 4. Any other notes you feel you should mention here
-No other notes that I feel the need to mention. 
+When clicking the buttons in the game, please click around the text and not on the text for the button to work properly. 
