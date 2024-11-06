@@ -43,8 +43,6 @@ public class Letters extends Actor
             String newImage = "images/redLetters/";
             newImage = newImage.concat(letter.get(key).substring(20,23) + "redLetters.png");
 
-            System.out.println(newImage);
-
             //replace value at key with new red version of letter
             letter.replace(key, newImage);
 
@@ -65,7 +63,6 @@ public class Letters extends Actor
             //create string with address of black versiou of letter
             String newImage = "images/blackLetters/";
             newImage = newImage.concat(letter.get(key).substring(18,21) + "blackLetters.png");
-
 
             //replace value in hashmap and update
             letter.replace(key,newImage);
