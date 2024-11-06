@@ -96,31 +96,31 @@ public class Letters extends Actor
     public void fillMap()
     {
         //put all letters into hashmap
-        letter.put("a", "images/blackLetters/00_blackLetters.png ");
-        letter.put("b", "images/blackLetters/01_blackLetters.png ");
-        letter.put("c", "images/blackLetters/02_blackLetters.png ");
-        letter.put("d", "images/blackLetters/03_blackLetters.png ");
-        letter.put("e", "images/blackLetters/04_blackLetters.png ");
-        letter.put("f", "images/blackLetters/05_blackLetters.png ");
-        letter.put("g", "images/blackLetters/06_blackLetters.png ");
-        letter.put("h", "images/blackLetters/07_blackLetters.png ");
-        letter.put("i", "images/blackLetters/08_blackLetters.png ");
-        letter.put("j", "images/blackLetters/09_blackLetters.png ");
-        letter.put("k", "images/blackLetters/10_blackLetters.png ");
-        letter.put("l", "images/blackLetters/11_blackLetters.png ");
-        letter.put("m", "images/blackLetters/12_blackLetters.png ");
-        letter.put("n", "images/blackLetters/13_blackLetters.png ");
-        letter.put("o", "images/blackLetters/14_blackLetters.png ");
-        letter.put("p", "images/blackLetters/15_blackLetters.png ");
-        letter.put("q", "images/blackLetters/16_blackLetters.png ");
-        letter.put("r", "images/blackLetters/17_blackLetters.png ");
-        letter.put("s", "images/blackLetters/18_blackLetters.png ");
-        letter.put("t", "images/blackLetters/19_blackLetters.png ");
-        letter.put("u", "images/blackLetters/20_blackLetters.png ");
-        letter.put("v", "images/blackLetters/21_blackLetters.png ");
-        letter.put("w", "images/blackLetters/22_blackLetters.png ");
-        letter.put("x", "images/blackLetters/23_blackLetters.png ");
-        letter.put("y", "images/blackLetters/24_blackLetters.png ");
-        letter.put("z", "images/blackLetters/25_blackLetters.png ");
+        letter.put("a", "images/blackLetters/00_blackLetters.png");
+        letter.put("b", "images/blackLetters/01_blackLetters.png");
+        letter.put("c", "images/blackLetters/02_blackLetters.png");
+        letter.put("d", "images/blackLetters/03_blackLetters.png");
+        letter.put("e", "images/blackLetters/04_blackLetters.png");
+        letter.put("f", "images/blackLetters/05_blackLetters.png");
+        letter.put("g", "images/blackLetters/06_blackLetters.png");
+        letter.put("h", "images/blackLetters/07_blackLetters.png");
+        letter.put("i", "images/blackLetters/08_blackLetters.png");
+        letter.put("j", "images/blackLetters/09_blackLetters.png");
+        letter.put("k", "images/blackLetters/10_blackLetters.png");
+        letter.put("l", "images/blackLetters/11_blackLetters.png");
+        letter.put("m", "images/blackLetters/12_blackLetters.png");
+        letter.put("n", "images/blackLetters/13_blackLetters.png");
+        letter.put("o", "images/blackLetters/14_blackLetters.png");
+        letter.put("p", "images/blackLetters/15_blackLetters.png");
+        letter.put("q", "images/blackLetters/16_blackLetters.png");
+        letter.put("r", "images/blackLetters/17_blackLetters.png");
+        letter.put("s", "images/blackLetters/18_blackLetters.png");
+        letter.put("t", "images/blackLetters/19_blackLetters.png");
+        letter.put("u", "images/blackLetters/20_blackLetters.png");
+        letter.put("v", "images/blackLetters/21_blackLetters.png");
+        letter.put("w", "images/blackLetters/22_blackLetters.png");
+        letter.put("x", "images/blackLetters/23_blackLetters.png");
+        letter.put("y", "images/blackLetters/24_blackLetters.png");
+        letter.put("z", "images/blackLetters/25_blackLetters.png");
     }
 }
